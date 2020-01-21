@@ -1,0 +1,10 @@
+.react-select-container {
+  input {
+    height: 18px;
+  }
+}
+
+.react-select__control--is-focused {
+  border: 1px solid #33c3f0 !important;
+  box-shadow: none !important;
+}
