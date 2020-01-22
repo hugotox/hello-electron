@@ -1,7 +1,9 @@
-.react-select-container {
-  input {
-    height: 18px;
-  }
+body {
+  background-color: white;
+}
+
+.react-select-container input {
+  height: 18px;
 }
 
 .react-select__control--is-focused {

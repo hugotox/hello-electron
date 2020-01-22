@@ -1,6 +1,6 @@
 {
   "name": "hello-electron",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
@@ -9,10 +9,11 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx src",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "electron-pack": "electron-builder build -mw"
+    "electron-pack": "electron-builder build -m"
   },
   "author": {
     "name": "Hugo Pineda",
@@ -51,19 +52,70 @@
   "devDependencies": {
     "@rescripts/cli": "^0.0.13",
     "@rescripts/rescript-env": "^0.0.11",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^4.0.0",
     "concurrently": "^5.0.2",
     "electron": "^6.1.7",
     "electron-builder": "^22.2.0",
+    "eslint": "6.7.1",
+    "eslint-config-prettier": "6.7.0",
+    "eslint-config-react-app": "5.0.2",
+    "eslint-config-standard": "14.1.0",
+    "eslint-config-standard-react": "9.2.0",
+    "eslint-import-resolver-babel-module": "5.1.0",
+    "eslint-plugin-flowtype": "3.13.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "23.0.4",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-standard": "4.0.1",
     "prettier": "^1.19.1",
     "typescript": "^3.7.4",
     "wait-on": "^3.3.0"
   },
   "prettier": {
+    "arrowParens": "always",
+    "printWidth": 100,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "plugin:jsx-a11y/recommended",
+      "plugin:import/recommended",
+      "react-app",
+      "standard",
+      "standard-react",
+      "prettier",
+      "prettier/flowtype",
+      "prettier/react",
+      "prettier/standard"
+    ],
+    "plugins": [
+      "jest",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "settings": {
+      "import/resolver": {
+        "babel-module": {
+          "root": [
+            "./src"
+          ],
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      }
+    }
   },
   "browserslist": {
     "production": [
