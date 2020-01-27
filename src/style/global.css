@@ -1,5 +1,39 @@
 body {
-  background-color: white;
+  background-color: #171717;
+  color: #dadada;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  background-color: #292929;
+  border: solid 1px #292929;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-right-color: #383838;
+  border-bottom-color: #464646;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+  background-color: #1a242b;
+  border: solid 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-top-color: #25333d;
+  border-right-color: #161e24;
+  border-bottom-color: #161e24;
+  border-left-color: #25333d;
+  min-width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
 }
 
 .react-select-container input {

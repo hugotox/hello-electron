@@ -1,3 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
 .main {
-  padding-left: 120px;
+  padding: 0 20px 20px 20px;
+}
+
+.previewCmd {
+  font-family:  Courier, monospace;
+  background-color: #292929;
+  border: solid 1px #292929;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: rgb(101, 201, 2);
+}
+
+.output {
+  font-size: 14px;
+  font-family:  Courier, monospace;
+  background-color: #292929;
+  border: solid 1px #292929;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: rgb(101, 201, 2);
 }

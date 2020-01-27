@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 export const Sidebar = () => {
   return (
     <div className={style.sidebar}>
+      <div className="margin-bottom">
+        <input type="text" placeholder="Search" />
+      </div>
       <a>
         <img src="/fabric.png" alt="fabric" width={20} height={20} /> Fabric
       </a>
