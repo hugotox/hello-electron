@@ -8,7 +8,7 @@ export const About = () => {
 
   const sendMessage = useCallback(() => {
     console.log('sending a message')
-    ipcRenderer.send('asynchronous-message', 'ping')
+    ipcRenderer.send('asynchronous-message', 'ls', ['-la'])
   }, [])
 
   useEffect(() => {

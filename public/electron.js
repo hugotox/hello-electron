@@ -1,7 +1,7 @@
 const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
-const setupCommands = require('./setup-commands')
+const { setupCommands } = require('./commands')
 
 const path = require('path')
 const isDev = require('electron-is-dev')

@@ -1,22 +1,24 @@
 const { ipcMain } = require('electron')
 const { spawn } = require('child_process')
 
-module.exports = () => {
+const setupCommands = () => {
   console.log('setting up commands')
 
-  ipcMain.on('asynchronous-message', (event, arg) => {
-    const command = spawn('ls', ['-la'])
+  ipcMain.on('asynchronous-message', (event, command, args) => {
+    const process = spawn(command, args)
 
-    command.stdout.on('data', (data) => {
+    process.stdout.on('data', (data) => {
       event.reply('asynchronous-reply', `stdout: ${data}`)
     })
 
-    command.stderr.on('data', (data) => {
+    process.stderr.on('data', (data) => {
       event.reply(`'asynchronous-reply',stderr: ${data}`)
     })
 
-    command.on('close', (code) => {
+    process.on('close', (code) => {
       event.reply('asynchronous-reply', `child process exited with code ${code}`)
     })
   })
 }
+
+module.exports = { setupCommands }
