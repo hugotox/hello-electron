@@ -55,7 +55,7 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-module-resolver": "^4.0.0",
     "concurrently": "^5.0.2",
-    "electron": "^6.1.7",
+    "electron": "^18.3.7",
     "electron-builder": "^22.2.0",
     "eslint": "6.7.1",
     "eslint-config-prettier": "6.7.0",
